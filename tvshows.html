@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Shows - RMDB</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/tv-shows.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+    <div class="background-image"></div>
+    <header>
+      <div class="nav">
+        <a href="/">
+        <div class="logo">
+          <h1>RMDB</h1>
+        </div> </a>
+
+        <div class="nav-items">
+          <ul class="mobile-menu ">
+      <div class="momenutop">
+        <i class="fa-solid fa-xmark" id="mobile-menu-close"></i>
+      </div>
+            <li><a href="/">home</a></li>
+            <li><a href="#" class="active">TV Shows</a></li>
+            <li><a href="/movies.html" >Movies</a></li>
+            <li><a href="/actors.html">actors</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-btn">
+            <form id="search-bar">
+              <input type="text" id="search-input" placeholder="Search for movies, TV shows..." required>
+              <button type="submit" class="btn-1">Search</button>
+          </form>
+          <i class="fa-solid fa-bars" id="mobile-menu-open"></i>
+        </div>
+      </div>
+
+    </header>
+      <main>
+        <section class="background-image"></section>
+    <section id="featured-carousel" class="carousel">
+        <div class="carousel-wrapper">
+            <!-- Carousel items will be injected here by JavaScript -->
+        </div>
+        <button class="carousel-control left">&lsaquo;</button>
+        <button class="carousel-control right">&rsaquo;</button>
+    </section>
+    <section id="trending-tv-shows" class="tv-shows-container">
+        <h2>Trending TV Shows</h2>
+        <div id="trending-tv-shows-list" class="tv-shows-list"></div>
+    </section>
+    <section id="upcoming-tv-shows" class="tv-shows-container">
+        <h2>Upcoming TV Shows</h2>
+        <div id="upcoming-tv-shows-list" class="tv-shows-list"></div>
+    </section>
+    <section id="you-may-like" class="tv-shows-container">
+        <h2>You May Like</h2>
+        <div id="you-may-like-list" class="tv-shows-list"></div>
+    </section>
+    <div id="pagination-controls" class="pagination-controls">
+        <button id="prev-page" class="pagination-button">&lsaquo; Prev</button>
+        <button id="current-page" class="pagination-button">Page 1</button>
+        <button id="next-page" class="pagination-button">Next &rsaquo;</button>
+    </div>
+
+    </main>
+    <footer>
+
+        <h3>Copyright &copy; 2024 <a href="https://ronitbhandari.com.np/">Ronit Bhandari</a></h3>
+        <ul>
+        <a href="https://www.facebook.com/itsmeroneet/"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/itsme_roneet"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://ronitbhandari.com.np/"><i class="fa-solid fa-globe"></i></a>
+        </ul>
+      </footer>
+    <script src="js/common.js"></script>
+    <script src="js/tv-shows.js"></script>
+</body>
+</html>

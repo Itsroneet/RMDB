@@ -1,0 +1,133 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const apiKey = '5a41a4ff0e4bfcc5608165fe4ae559ed';
+    const heroSection = document.getElementById('hero');
+    const searchInput = document.getElementById('search-input');
+    const loadingSpinner = document.getElementById('loading-spinner');
+    const loadingSpinner1 = document.getElementById('loading-spinner1');
+    const loadingSpinner2 = document.getElementById('loading-spinner2');
+    const loadingSpinner4 = document.querySelector('.loading-spinner');
+    const searchlabel= document.getElementById('slabel');
+    const errorcon = document.querySelector('.error-con');
+    const error = document.querySelector('.error');
+    const mainarea = document.querySelector('#mainarea');
+    
+    function fetchAndDisplayMovies(url, containerId) {
+        showLoadingSpinner();
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const movies = data.results;
+                const container = document.getElementById(containerId);
+                container.innerHTML = ''; // Clear previous content
+                movies.forEach(movie => {
+                    const movieItem = document.createElement('div');
+                    movieItem.classList.add('content-item');
+                    movieItem.innerHTML = `
+                        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
+                        <div class="content-info">
+                            <h3>${movie.title}</h3>
+                            <p><b>Release :</b>${movie.release_date}</p>
+                        </div>
+                    `;
+                    movieItem.addEventListener('click', () => {
+                        window.location.href = `details.html?movieId=${movie.id}`;
+                    });
+                    container.appendChild(movieItem);
+                });
+                hideLoadingSpinner();
+            })
+            .catch(() => {
+                hideLoadingSpinner();
+                errorcon.style.display="block";
+                error.style.display="grid";
+                mainarea.style.display="none";
+            });
+    }
+
+    function fetchRandomHeroImage() {
+        const urls = [
+            `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`,
+            `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`,
+            `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`
+        ];
+
+        const randomUrl = urls[Math.floor(Math.random() * urls.length)];
+
+        fetch(randomUrl)
+            .then(response => response.json())
+            .then(data => {
+                const movies = data.results;
+                const randomMovie = movies[Math.floor(Math.random() * movies.length)];
+                const heroImageUrl = `https://image.tmdb.org/t/p/w1280${randomMovie.backdrop_path}`;
+                updateHeroImage(heroImageUrl);
+            })
+            .catch(() => {
+                const heroImageUrl = `(../The\ Garfield\ Movie.jpg`;
+                updateHeroImage(heroImageUrl);
+            });
+    }
+
+    function updateHeroImage(imageUrl) {
+        const currentImage = document.querySelector('.hero-image.active');
+        const newImage = document.createElement('div');
+        newImage.className = 'hero-image';
+        newImage.style.backgroundImage = `url(${imageUrl})`;
+        heroSection.appendChild(newImage);
+        
+        // Triggering the fade-in effect
+        setTimeout(() => {
+            newImage.classList.add('active');
+            currentImage.classList.remove('active');
+            
+            // Remove the old image after the transition
+            setTimeout(() => {
+                heroSection.removeChild(currentImage);
+            }, 1000); // Match the transition duration in CSS
+        }, 50);
+    }
+
+    function showLoadingSpinner() {
+        loadingSpinner.style.display = 'block';
+    }
+
+    function hideLoadingSpinner() {
+        loadingSpinner.style.display = 'none';
+        loadingSpinner1.style.display = 'none';
+        loadingSpinner2.style.display = 'none';
+    }
+  
+
+
+
+    searchInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            const query = searchInput.value;
+            if (query==="") {
+                window.location.href = `#`;
+              searchlabel.style.display="block"
+          } else {
+              window.location.href = `search.html?query=${query}`;
+            
+          }
+        }
+    });
+
+    document.getElementById('search-button').addEventListener('click', () => {
+            const query = searchInput.value;
+            if (query==="") {
+                searchlabel.style.display="block"
+            } else {
+                window.location.href = `search.html?query=${query}`;
+              
+            }
+        
+    });
+
+
+    fetchAndDisplayMovies(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`, 'featured-grid');
+    fetchAndDisplayMovies(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`, 'trending-grid');
+    fetchAndDisplayMovies(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`, 'new-releases-grid');
+    
+    fetchRandomHeroImage();
+    setInterval(fetchRandomHeroImage, 10000); // Change hero image every 10 seconds
+});

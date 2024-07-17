@@ -1,0 +1,394 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+
+/* ---------------------------------
+-------------error---------------
+--------------------------------- */
+
+.error-con {
+  color: white;
+  padding: 10px 0;
+  background: linear-gradient(45deg, red, blue, red);
+  margin-top: 30px;
+  display: none;
+}
+
+.error,
+.movie-id {
+  margin: 30px auto;
+  display: none;
+  place-items: center;
+  width: 75vw;
+  padding: 20px;
+  border: 2px solid;
+  border-radius: 14px;
+}
+
+.error h2,
+.movie-id h2 {
+  font-size: 2.5rem;
+  background: none;
+  text-transform: capitalize;
+}
+.error p {
+  font-size: 1.5rem;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+/* ----------------------------
+  ----button------------- */
+
+.btn-1 {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: linear-gradient(45deg, blue, red);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid white;
+}
+
+.btn-1:hover {
+  scale: 1.07;
+}
+
+.btn-2 {
+  background: blue;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 18px;
+  transition: all 0.3s;
+}
+
+.btn-2:hover {
+  background: transparent;
+  color: blue;
+  border: 2px solid red;
+  border-radius: 8px;
+  scale: 1.1;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #ff0000b0;
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999999;
+  box-shadow: 0px 3px 20px 0px var(--accent-color);
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.logo {
+  font-size: 1.3rem;
+  color: white;
+}
+
+.nav-items ul {
+  display: flex;
+}
+
+.nav-items ul li {
+  list-style: none;
+}
+
+.nav-items ul li a {
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: capitalize;
+  margin: 0 10px;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+.nav-items ul li a:focus:after,
+.nav-items ul li a:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.nav-items ul li .active:after {
+  width: 100%;
+  left: 0%;
+}
+
+.nav-items ul li .active {
+  border: none;
+}
+
+.nav-items ul li a:after {
+  content: "";
+  pointer-events: none;
+  bottom: -12px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+.nav-btn {
+  display: flex;
+}
+
+#mobile-menu-open,
+#mobile-menu-close {
+  display: none;
+  font-size: 2.5rem;
+  align-self: center;
+}
+
+#search-bar {
+  text-align: center;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+#search-bar input {
+  padding: 10px;
+  font-size: 16px;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#search-box {
+  display: flex;
+  flex-direction: column;
+  margin-right: 18px;
+  width: 60%;
+  max-width: 600px;
+}
+
+#search-box label {
+  font-size: 0.8rem;
+  color: yellow;
+  display: none;
+  position: absolute;
+  top: 72%;
+}
+
+footer {
+  display: flex;
+  background-color: red;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Times New Roman", Times, serif;
+}
+
+footer h3 a {
+  color: white;
+}
+
+footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer ul a i {
+  display: inline;
+  margin: 0 10px;
+  color: white;
+}
+
+footer ul a i {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+@media (max-width: 600px) {
+  header nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  #search-bar input {
+    width: 80%;
+  }
+}
+
+/* ----------------responsive--------------- */
+
+@media only screen and (max-width: 900px) {
+  #mobile-menu-open {
+    color: white;
+    display: block;
+    margin-left: 25px;
+  }
+
+  #mobile-menu-close {
+    display: block;
+    margin-left: 25px;
+    position: relative;
+    top: 20%;
+    right: 12%;
+    font-size: 3rem;
+    color: white;
+  }
+
+  .momenutop {
+    margin-top: 0;
+    height: 80px;
+    width: 100%;
+    text-align: right;
+    box-shadow: 0px 3px 20px 0px red;
+    border-left: none;
+  }
+
+  .nav-items .mobile-menu {
+    align-items: center;
+    position: absolute;
+    flex-direction: column;
+    gap: 40px;
+    background: rgb(0 0 0 / 52%);
+    backdrop-filter: blur(3px);
+    width: 70%;
+    height: 100vh;
+    padding: 0 0 35px 0;
+    top: -20px;
+    right: 0;
+    transform: translateX(100%);
+    border-left: 2px solid red;
+    overflow: hidden;
+    transition: all 0.4s;
+  }
+
+  .nav-items .nav-active {
+    transform: translateX(0%);
+  }
+
+  .nav-items ul li a {
+    display: inline-block;
+    font-size: 1.8rem;
+    padding: 10px 32px;
+    width: 100%;
+    margin: 0;
+    border-bottom: 2px solid red;
+  }
+
+  #search-box {
+    width: 60%;
+  }
+
+  #search-bar input {
+    padding: 10px;
+    font-size: 16px;
+    max-width: 600px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .error h2,
+  .movie-id h2 {
+    font-size: 2rem;
+  }
+  .error p {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .logo {
+    font-size: 0.8rem;
+  }
+
+  .nav button {
+    font-size: 0.7rem;
+  }
+
+  #search-box label {
+    font-size: 0.7rem;
+  }
+
+  .nav-btn button {
+    display: none;
+  }
+
+  .error h2,
+  .movie-id h2 {
+    font-size: 1.5rem;
+  }
+
+  .error p {
+    font-size: 1rem;
+  }
+
+  #mobile-menu-open {
+    color: white;
+    display: block;
+    margin-left: 0px;
+  }
+  footer {
+    padding: 2px 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  footer h3 {
+    font-size: 0.8rem;
+  }
+
+  footer ul a i {
+    margin: 0 7px;
+  }
+
+  footer ul a i {
+    font-size: 1rem;
+  }
+
+  .error h2,
+  .movie-id h2 {
+    font-size: 1.3rem;
+  }
+
+  .error p {
+    font-size: 0.8rem;
+  }
+
+  #search-box {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 300px) {
+  .error h2,
+  .movie-id h2 {
+    font-size: 1rem;
+  }
+
+  .error p {
+    font-size: 0.4rem;
+  }
+}

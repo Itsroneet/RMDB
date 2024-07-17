@@ -1,0 +1,236 @@
+#hero {
+  position: relative;
+  height: 83vh;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  background-image: url(../The\ Garfield\ Movie.jpg);
+}
+
+.hero-image.active {
+  opacity: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+
+}
+
+.hero-content h1 span {
+  color: blue;
+ 
+}
+
+
+
+.hero-content p {
+  font-size: 24px;
+}
+
+main {
+  color: aliceblue;
+}
+
+
+h2 {
+  color: white;
+  font-size: 3rem;
+  background: linear-gradient(45deg, red, blue, red);
+  text-align: center;
+  padding: 5px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 12px auto;
+}
+
+.content-grid h3 {
+  color: red;
+  margin: 0 5px;
+}
+
+.content-grid p {
+  color: black;
+  margin: 5px 8px;
+}
+
+.content-grid .content-item {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.content-grid .content-item:hover {
+  transform: scale(1.05);
+}
+
+.content-grid img {
+  width: 100%;
+  height: auto;
+}
+
+.content-grid .content-info {
+  padding: 10px;
+}
+
+
+/* ---------------------------------
+-------------preloader---------------
+--------------------------------- */
+
+
+.loading-spinner {
+  --height-of-loader: 14px;
+  --loader-color: #0071e2;
+  width: 250px;
+  height: var(--height-of-loader);
+  border-radius: 30px;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.loading-spinner::before {
+  content: "";
+  position: absolute;
+  background: var(--loader-color);
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  border-radius: 30px;
+  animation: moving 1s ease-in-out infinite;
+  ;
+}
+
+@keyframes moving {
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+    right: 0;
+    left: unset;
+  }
+}
+
+
+
+.content {
+  display: none;
+  animation: page .8s forwards;
+}
+
+@keyframes page {
+  0% {
+    opacity: 0;
+    transform: translatey(-150px);
+    filter: blur(100px);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translatey(0);
+    filter: blur(0px);
+  }
+}
+
+
+
+
+@media screen and (max-width:900px) {
+  #hero {
+    height: 70vw;
+  }
+
+  .content-grid {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width:560px) {
+  #hero {
+    height: 70vw;
+  }
+
+  .hero-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width:450px) {
+  #hero {
+    height: 90vw;
+  }
+
+  .content-grid {
+    width: 90%;
+    margin: auto;
+  }
+
+  .content-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+}
+
+
+
+/* @media only screen and (max-width: 500px) {
+  #hero{
+    height: 90vh;
+  }
+
+}
+@media only screen and (max-width: 40px) {
+  #hero{
+    height: 100vh;
+  }
+
+} */

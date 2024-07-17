@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RMDB - Discover your favorite movies and TV shows</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <a href="/">
+          <div class="logo">
+            <h1>RMDB</h1>
+          </div>
+        </a>
+
+        <div class="nav-items">
+          <ul class="mobile-menu">
+            <div class="momenutop">
+              <i class="fa-solid fa-xmark" id="mobile-menu-close"></i>
+            </div>
+            <li><a href="#" class="active">home</a></li>
+            <li><a href="/tvshows.html">TV Shows</a></li>
+            <li><a href="/movies.html">Movies</a></li>
+            <li><a href="/actors.html">actors</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-btn">
+          <div id="search-bar">
+            <div id="search-box">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search for movies, TV shows, actors..."
+            />
+            <label for="search-input" id="slabel">search box cannot be empty</label>
+            </div>
+            <button id="search-button" class="btn-1">Search</button>\
+          </div>
+          <i class="fa-solid fa-bars" id="mobile-menu-open"></i>
+        </div>
+      </div>
+    </header>
+
+    <div id="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Welcome to <span>RMDB</span> </h1>
+        <p>Discover your favorite movies and TV shows</p>
+      </div>
+    </div>
+
+    <div class="error-con" id="error">
+      <div class="error">
+        <h2>something Wents Wrong</h2>
+        <p>Unable to fetch data........</p>
+        <p>Please Try Again later....</p>
+        <a href="/"> <button class="btn-1">Try Again</button></a>
+      </div>
+    </div>
+
+    <main id="mainarea">
+      
+      <h2>New Releases</h2>
+      <div id="loading-spinner" class="loading-spinner"></div>        
+      <div id="new-releases-grid" class="content-grid"></div>
+      <h2>Featured</h2>
+      <div id="loading-spinner1" class="loading-spinner"></div>        
+      <div id="featured-grid" class="content-grid"></div>
+      <h2>Trending</h2>
+      <div id="loading-spinner2" class="loading-spinner"></div>        
+      <div id="trending-grid" class="content-grid"></div>
+    </main>
+
+    <footer>
+
+      <h3>Copyright &copy; 2024 <a href="https://ronitbhandari.com.np/">Ronit Bhandari</a></h3>
+      <ul>
+      <a href="https://www.facebook.com/itsmeroneet/"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/itsme_roneet"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://ronitbhandari.com.np/"><i class="fa-solid fa-globe"></i></a>
+      </ul>
+    </footer>
+    <script src="js/home.js"></script>
+    <script src="js/common.js"></script>
+  </body>
+</html>

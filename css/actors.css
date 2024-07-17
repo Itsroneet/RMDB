@@ -1,0 +1,47 @@
+body {
+   
+    font-family: Arial, sans-serif;
+    background: url(../The\ Garfield\ Movie.jpg) ;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: #00000047;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: white;
+    font-size: 36px;
+}
+
+p {
+    color: white;
+    font-size: 18px;
+}
+
+.construction-icon {
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 0px;
+}
