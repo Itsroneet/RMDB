@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RMDB Login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container ">
+        <!-- <div class="cover">
+            <h2>Welcome to</h2>
+            <h1>RMDB</h1>
+            <p>Discover your favorite movies and TV shows</p>
+        </div> -->
+        <div class="login-box login-active">
+        <a href="/"><h1>RMDB </h1></a>
+            <p>Discover your favorite movies and TV shows</p>
+            <form id="login-form">
+                <i class="fa-regular fa-envelope icon"></i>
+                <input type="email" placeholder="Email" required>
+                <i class="fa-solid fa-lock icon"></i>
+                <input type="password" id="password" class="password-login" placeholder="Password" required>
+                <i class="fa-solid fa-eye eye pass-show-login"></i>
+                <i class="fa-solid fa-eye-slash eye pass-hide-login"></i>
+                <button class="loginbtn btn1"  type="submit">Log In</button>
+            </form>
+            <a href="#" class="forgot-password">Forgot password?</a>
+            <div class="divider"></div>
+            <button class="create-account btn2">Create New Account</button>
+        </div>
+        <div class="signup-box">
+            <a href="/"><h1>RMDB </h1></a>
+            <p>Discover your favorite movies and TV shows</p>
+            <form id="signup-form">
+                <i class="fa-solid fa-user icon"></i>
+                <input type="text" placeholder="Name" required>
+                <i class="fa-regular fa-envelope icon"></i>
+                <input type="email" placeholder="Email" required>
+                <i class="fa-solid fa-lock icon"></i>
+                <input type="password"class="password-signup" id="password" placeholder="Password" required>
+                <i class="fa-solid fa-eye eye pass-show-signup"></i>
+                <i class="fa-solid fa-eye-slash eye pass-hide-signup"></i>
+                <button type="submit " class="signupbtn btn1" >create account</button>
+            </form>
+            <div class="divider"></div>
+            <button class="have-account btn2">Have an account</button>
+        </div>
+    </div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>
