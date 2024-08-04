@@ -9,6 +9,19 @@ let forgetbtn = document.querySelector(".forgot-password")
 let forgetarea = document.querySelector(".forgot")
 
 
+const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    }
+  });
+
+
 create.addEventListener("click", function () {
     container.classList.add("container-active");
     signuparea.classList.add("signup-active");
@@ -82,21 +95,31 @@ let loginform = document.getElementById('login-form')
 
 loginform.addEventListener('submit', function (event) {
     event.preventDefault();
-    alert('Invalid username/email or password.');
-});
-
-
-//signup process
-
+    Toast.fire({
+        icon: "error",
+        title: "Invalid username/email or password."
+      });
+    });
+    
+    
+    //signup process
+    
 let signupform = document.getElementById('signup-form')
 
 signupform.addEventListener('submit', function (event) {
     event.preventDefault();
     if (password2.value.length<5) {
-        alert("Password must be more than 5 letters")
-    } else {
-        window.location.href = '/';
-        alert('couldnt register');
+        Toast.fire({
+            icon: "error",
+            title: "Password must be more than 5 letters."
+          });
+          
+        } else {
+            Toast.fire({
+                icon: "error",
+                title: "couldnt register."
+              });
+              
     }
 });
 
