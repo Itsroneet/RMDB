@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
             carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
         });
     }
-
+   
     closeTrailerBtn.addEventListener('click', () => {
         trailerVideo.src = '';
         trailerModal.style.display = 'none';
@@ -115,4 +115,3 @@ document.addEventListener('DOMContentLoaded', function() {
         iderror.style.display="block"; 
     }
 });
-

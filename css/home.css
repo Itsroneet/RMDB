@@ -68,6 +68,7 @@ h2 {
   background: linear-gradient(45deg, red, blue, red);
   text-align: center;
   padding: 5px;
+  cursor: default;
 }
 
 .content-grid {
@@ -93,12 +94,14 @@ h2 {
   border: 1px solid #ccc;
   border-radius: 10px;
   overflow: hidden;
-  transition: transform 0.3s;
+  position: relative;
+  transition: all 0.3s;
 }
 
-.content-grid .content-item:hover {
-  transform: scale(1.05);
+.content-grid .content-item:hover{
+  scale:1.07
 }
+
 
 .content-grid img {
   width: 100%;
@@ -110,6 +113,47 @@ h2 {
   padding: 10px;
 }
 
+.hover-info{
+  position: absolute;
+  background: #000000c7;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  left: 100%;
+  transition: all .13s ease-in ;
+}
+
+.hover-info h3{
+  text-align: center;
+    margin: 10px 5px;
+    line-height: 1.6rem;
+    font-weight: 400;
+}
+
+.hover-info p{
+  color: white;
+}
+
+.details-button{
+  width: 60%;
+  margin-top: 30px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 1px solid red;
+  background: none;
+  color: red;
+  font-family: sans-serif;
+  transition: all .3s ease-in ;
+  cursor: pointer;
+}
+
+.details-button:hover{
+  scale: 1.1;
+}
 
 /* ---------------------------------
 -------------preloader---------------

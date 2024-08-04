@@ -10,33 +10,45 @@
 
 </head>
 <body>
-<main>
+  <header>
     <div class="nav">
-        <a href="/">
+      <a href="/">
         <div class="logo">
           <h1>RMDB</h1>
-        </div> </a>
-
-        <div class="nav-items">
-          <ul class="mobile-menu ">
-      <div class="momenutop">
-        <i class="fa-solid fa-xmark" id="mobile-menu-close"></i>
-      </div>
-            <li><a href="/">home</a></li>
-            <li><a href="/tvshows.html">TV Shows</a></li>
-            <li><a href="movies.html"  >Movies</a></li>
-            <li><a href="#" class="active">actors</a></li>
-          </ul>
         </div>
+      </a>
 
-        <div class="nav-btn">
-            <form id="search-bar">
-              <input type="text" id="search-input" placeholder="Search for movies, TV shows..." required>
-              <button type="submit" class="btn-1">Search</button>
-          </form>
-          <i class="fa-solid fa-bars" id="mobile-menu-open"></i>
-        </div>
+      <div class="nav-items">
+        <ul class="mobile-menu">
+          <div class="momenutop">
+            <i class="fa-solid fa-xmark" id="mobile-menu-close"></i>
+          </div>
+          <li><a href="/">home</a></li>
+          <li><a href="/tvshows.html">TV Shows</a></li>
+          <li><a href="/movies.html">Movies</a></li>
+          <li><a href="/login.html">Login</a></li>
+        </ul>
       </div>
+
+      <div class="nav-btn">
+        <div id="search-bar">
+          <div id="search-box">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search for movies, TV shows, actors..."
+            />
+            <label for="search-input" id="slabel"
+              >search box cannot be empty</label
+            >
+          </div>
+          <button id="search-button" class="btn-1">Search</button>
+        </div>
+        <i class="fa-solid fa-bars" id="mobile-menu-open"></i>
+      </div>
+    </div>
+  </header>
+  <main>
     <div class="container">
         <h1>We're Under Construction</h1>
         <p>Our website is currently undergoing scheduled maintenance.</p>
@@ -48,11 +60,11 @@
 </main>
     <footer>
 
-        <h3>Copyright &copy; 2024 <a href="https://ronitbhandari.com.np/">Ronit Bhandari</a></h3>
+        <h3>Copyright &copy; 2024 <a href="https://ronitbhandari.com.np/" target="_blank">Ronit Bhandari</a></h3>
         <ul>
-        <a href="https://www.facebook.com/itsmeroneet/"><i class="fa-brands fa-facebook"></i></a>
-          <a href="https://www.instagram.com/itsme_roneet"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://ronitbhandari.com.np/"><i class="fa-solid fa-globe"></i></a>
+        <a href="https://www.facebook.com/itsmeroneet/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/itsme_roneet" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://ronitbhandari.com.np/" target="_blank"><i class="fa-solid fa-globe"></i></a>
         </ul>
       </footer>
       <script src="js/common.js"></script>

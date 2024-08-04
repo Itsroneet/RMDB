@@ -11,8 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const error = document.querySelector('.error');
     const mainarea = document.querySelector('#mainarea');
     
+    let activeHoverInfo = null; // Variable to track the active hover info
+
     function fetchAndDisplayMovies(url, containerId) {
-        showLoadingSpinner();
+        showLoadingSpinner(); // Function to show a loading spinner
         fetch(url)
             .then(response => response.json())
             .then(data => {
@@ -28,21 +30,52 @@ document.addEventListener('DOMContentLoaded', function() {
                             <h3>${movie.title}</h3>
                             <p><b>Release :</b>${movie.release_date}</p>
                         </div>
+                        <div class="hover-info">
+                            <h3>${movie.title}</h3>
+                            <p><b>Release :</b>${movie.release_date}</p>
+                            <button class="details-button" data-movie-id="${movie.id}">Details <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                        </div>
                     `;
+    
+                    // Add event listener to the movieItem
                     movieItem.addEventListener('click', () => {
-                        window.location.href = `details.html?movieId=${movie.id}`;
+                        // Reset the previous active hover info if there is one
+                        if (activeHoverInfo) {
+                            activeHoverInfo.style.transform = "translateX(0)";
+                        }
+    
+                        // Set the new active hover info
+                        const hoverInfo = movieItem.querySelector('.hover-info');
+                        hoverInfo.style.transform = "translateX(-100%)";
+                        activeHoverInfo = hoverInfo;
                     });
+    
                     container.appendChild(movieItem);
                 });
-                hideLoadingSpinner();
+    
+    
+    
+                // Attach event listeners to all "Details" buttons
+               
+                document.querySelectorAll('.details-button').forEach(button => {
+                    button.addEventListener('click', (event) => {
+                        const movieId = event.target.getAttribute('data-movie-id');
+                        window.location.href = `details.html?movieId=${movieId}`;
+                    });
+                });
+    
+                hideLoadingSpinner(); // Function to hide the loading spinner
             })
             .catch(() => {
-                hideLoadingSpinner();
-                errorcon.style.display="block";
-                error.style.display="grid";
-                mainarea.style.display="none";
+                hideLoadingSpinner(); // Function to hide the loading spinner
+                errorcon.style.display = "block";
+                error.style.display = "grid";
+                mainarea.style.display = "none";
             });
     }
+    
+
+    
 
     function fetchRandomHeroImage() {
         const urls = [
