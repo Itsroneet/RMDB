@@ -120,6 +120,24 @@ body {
   margin-bottom: 20px;
 }
 
+#alert{
+  font-size: 1.4rem;
+  color: red;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin: -10px 0 -10px;
+  animation: alert 2s infinite alternate-reverse both ;
+}
+
+@keyframes alert {
+  0%{
+        opacity: 0%;
+  }
+  100%{
+      opacity: 100%;
+  }
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -289,13 +307,14 @@ transition: .3s opacity  ease-in;
     height: 0;
     padding: 0px;
     transition: .9s ;
+    box-shadow: none;
 
   }
 
   .login-active,
   .signup-active {
     padding: 30px;
-    width: 400px;
+    width: 95%;
     opacity: 100%;
     height: fit-content;
   }

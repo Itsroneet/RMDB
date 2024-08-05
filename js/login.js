@@ -71,6 +71,7 @@ passshide.addEventListener("click", function () {
 let password2 = document.querySelector(".password-signup")
 let passshow2 = document.querySelector(".pass-show-signup")
 let passshide2 = document.querySelector(".pass-hide-signup")
+let fullname = document.querySelector("#name")
 
 passshow2.addEventListener("click", function () {
 
@@ -108,12 +109,18 @@ let signupform = document.getElementById('signup-form')
 
 signupform.addEventListener('submit', function (event) {
     event.preventDefault();
-    if (password2.value.length<5) {
+    if (fullname.value.length<6) {
         Toast.fire({
             icon: "error",
-            title: "Password must be more than 5 letters."
+            title: "Invalid Name."
           });
           
+        } else if (password2.value.length<5) {
+            Toast.fire({
+                icon: "error",
+                title: "Password must be more than 5 letters."
+              });
+
         } else {
             Toast.fire({
                 icon: "error",
