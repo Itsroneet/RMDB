@@ -28,7 +28,7 @@ function showsignup() {
     loginform.reset();
     error_msg.innerHTML = ``;
     success_msg.innerHTML = ``;
-    toptitlepc.innerHTML = `Signup`;
+    toptitlepc.innerHTML = `RMDB - Signup`;
     localStorage.setItem("currentView", "signup");
 }
 
@@ -39,7 +39,7 @@ function showlogin() {
     error_msg.innerHTML = ``;
     success_msg.innerHTML = ``;
     signupform.reset();
-    toptitlepc.innerHTML = `Login`;
+    toptitlepc.innerHTML = `RMDB - Login`;
     localStorage.setItem("currentView", "login");
 }
 
@@ -50,7 +50,7 @@ function showforgot() {
     error_msg.innerHTML = ``;
     success_msg.innerHTML = ``;
     loginform.reset();
-    toptitlepc.innerHTML = `Forgot`;
+    toptitlepc.innerHTML = `RMDB - Forgot password`;
     localStorage.setItem("currentView", "forgot");
 }
 
@@ -61,7 +61,7 @@ function backtologin() {
     error_msg.innerHTML = ``;
     success_msg.innerHTML = ``;
     forgotfrom.reset();
-    toptitlepc.innerHTML = `Login`;
+    toptitlepc.innerHTML = `RMDB - Login`;
     localStorage.setItem("currentView", "login");
 }
 
