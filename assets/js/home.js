@@ -2,14 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const apiKey = '5a41a4ff0e4bfcc5608165fe4ae559ed';
     const heroSection = document.getElementById('hero');
     const searchInput = document.getElementById('search-input');
-    const loadingSpinner = document.getElementById('loading-spinner');
-    const loadingSpinner1 = document.getElementById('loading-spinner1');
-    const loadingSpinner2 = document.getElementById('loading-spinner2');
-    const loadingSpinner4 = document.querySelector('.loading-spinner');
+    const loadingSpinner = document.querySelectorAll('.loading-spinner');
     const searchlabel= document.getElementById('slabel');
-    const errorcon = document.querySelector('.error-con');
-    const error = document.querySelector('.error');
-    const mainarea = document.querySelector('#mainarea');
+    const contentgrid= document.querySelectorAll('.content-grid');
+    
     
     let activeHoverInfo = null; // Variable to track the active hover info
 
@@ -68,9 +64,10 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(() => {
                 hideLoadingSpinner(); // Function to hide the loading spinner
-                errorcon.style.display = "block";
-                error.style.display = "grid";
-                mainarea.style.display = "none";
+                        contentgrid.forEach(e=>{
+e.innerHTML=` <h2 id="error">Unable to fetch data<span></span></h2>`
+                        })
+               
             });
     }
     
@@ -120,13 +117,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function showLoadingSpinner() {
-        loadingSpinner.style.display = 'block';
+        loadingSpinner.forEach(e=>{
+            e.style.display="block"
+        })
     }
 
     function hideLoadingSpinner() {
-        loadingSpinner.style.display = 'none';
-        loadingSpinner1.style.display = 'none';
-        loadingSpinner2.style.display = 'none';
+        loadingSpinner.forEach(e=>{
+            e.style.display="none"
+        })
     }
   
 

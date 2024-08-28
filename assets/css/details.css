@@ -8,13 +8,7 @@ body {
     background-attachment: fixed;
 }
 
-.error-con{
-    color: black;
-      padding: 10px 0;
-      background: none;
-      margin-top: 30px;
-  }
-  
+ 
 
 main {
     padding: 2rem 1rem;
@@ -24,6 +18,7 @@ main {
 
 
 .loading-spinner {
+    display: none;
     --height-of-loader: 14px;
     --loader-color: #0071e2;
     width: 250px;

@@ -1,24 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
     const apiKey = '5a41a4ff0e4bfcc5608165fe4ae559ed';
-    const loadingSpinner = document.getElementById('loading-spinner');
     const movieDetailsContainer = document.getElementById('movie-details');
     const relatedImagesContainer = document.getElementById('related-images');
     const trailerModal = document.getElementById('trailer-modal');
     const closeTrailerBtn = document.getElementById('close-trailer');
     const trailerVideo = document.getElementById('trailer-video');
-    const error = document.querySelector('.error');
     const iderror = document.querySelector('.movie-id');
+    let loader = document.querySelector(".loading-spinner")
 
 
     const urlParams = new URLSearchParams(window.location.search);
     const movieId = urlParams.get('movieId');
 
     function showLoadingSpinner() {
-        loadingSpinner.style.display = 'block';
+        loader.style.display = "block"
     }
 
     function hideLoadingSpinner() {
-        loadingSpinner.style.display = 'none';
+        loader.style.display = "none";
     }
 
     function fetchMovieDetails() {
@@ -30,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 hideLoadingSpinner();
             })
             .catch(() => {
-                hideLoadingSpinner();
-                error.style.display="grid";            });
+               hideLoadingSpinner()
+                   });
     }
 
     function displayMovieDetails(movie) {

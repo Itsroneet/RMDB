@@ -69,3 +69,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     fetchMovies(currentPage);
 });
+
+
+const searchInput = document.getElementById('search-input');
+searchInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        const query = searchInput.value;
+        window.location.href = `search.html?query=${query}`;
+    }
+});
+
+const searchForm = document.getElementById('search-bar');
+    searchForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const searchInput = document.getElementById('search-input');
+        const query = searchInput.value.trim();
+        if (query) {
+            window.location.href = `search.html?query=${query}`;
+        }
+    });

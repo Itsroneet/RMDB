@@ -1,76 +1,75 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RMDB - Discover your favorite movies and TV shows</title>
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/details.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RMDB - Discover your favorite movies and TV shows</title>
+  <link rel="stylesheet" href="assets/css/common.css">
+  <link rel="stylesheet" href="assets/css/details.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 </head>
+
 <body>
-    <header>
-        <div class="nav">
-            <a href="/">
-            <div class="logo">
-              <h1>RMDB</h1>
-            </div> </a>
-  
-            <div class="nav-items">
-              <ul class="mobile-menu ">
+  <header>
+    <div class="nav">
+      <a href="/">
+        <div class="logo">
+          <h1>RMDB</h1>
+        </div>
+      </a>
+
+      <div class="nav-items">
+        <ul class="mobile-menu ">
           <div class="momenutop">
             <i class="fa-solid fa-xmark" id="mobile-menu-close"></i>
           </div>
-                <li><a href="/">home</a></li>
-                <li><a href='/tvshows.html'>TV Shows</a></li>
-                <li><a href='/movies.html'>Movies</a></li>
-                <li><a href='/login.html'>Login</a></li>
-              </ul>
-            </div>
-  
-              <i class="fa-solid fa-bars" id="mobile-menu-open"></i>
-           
-          </div>
-    </header>
-    <main>
-      <div id="movie-details" class="movie-details">
-          <div id="loading-spinner" class="loading-spinner"></div>
-            <!-- ------------error------------------ -->
-                <div class="error" id="error">
-                  <h2>something Wents Wrong</h2>
-                  <p>Unable to fetch data........</p>
-                  <p>Please Try Again later....</p>
-                  <a href="/"> <button class="btn-1">Try Again</button></a>
-              </div>
+          <li><a href="/">home</a></li>
+          <li><a href='/tvshows.html'>TV Shows</a></li>
+          <li><a href='/movies.html'>Movies</a></li>
+          <li><a href='/login.html'>Login</a></li>
+        </ul>
+      </div>
 
-<div class="movie-id" id="movie-id">
-    <h2>Movie ID not found.</h2>
-</div>
+      <i class="fa-solid fa-bars" id="mobile-menu-open"></i>
 
-                         <!-- Movie details will be dynamically inserted here -->
-        </div>
-        <div id="related-images" class="related-images">
-            <!-- Related images carousel will be dynamically inserted here -->
-        </div>
-    </main>
-    <div id="trailer-modal" class="trailer-modal">
-        <div class="trailer-content">
-            <span id="close-trailer" class="close">&times;</span>
-            <iframe id="trailer-video" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
     </div>
-    <footer>
+  </header>
+  <main>
+    <div id="movie-details" class="movie-details">
+      <div id="loading-spinner" class="loading-spinner"></div>
 
-      <h3>Copyright &copy; 2024 <a href="https://ronitbhandari.com.np/" target="_blank">Ronit Bhandari</a></h3>
-      <ul>
+
+      <div class="movie-id" id="movie-id">
+        <h2>Movie ID not found.</h2>
+      </div>
+    </div>
+
+    <!-- Movie details will be dynamically inserted here -->
+    </div>
+    <div id="related-images" class="related-images">
+      <!-- Related images carousel will be dynamically inserted here -->
+    </div>
+  </main>
+  <div id="trailer-modal" class="trailer-modal">
+    <div class="trailer-content">
+      <span id="close-trailer" class="close">&times;</span>
+      <iframe id="trailer-video" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+  <footer>
+
+    <h3>Copyright &copy; 2024 <a href="https://ronitbhandari.com.np/" target="_blank">Ronit Bhandari</a></h3>
+    <ul>
       <a href="https://www.facebook.com/itsmeroneet/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-        <a href="https://www.instagram.com/itsme_roneet" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://ronitbhandari.com.np/" target="_blank"><i class="fa-solid fa-globe"></i></a>
-      </ul>
-    </footer>
-    <script src="js/details.js"></script>
-    <script src="js/common.js"></script>
+      <a href="https://www.instagram.com/itsme_roneet" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://ronitbhandari.com.np/" target="_blank"><i class="fa-solid fa-globe"></i></a>
+    </ul>
+  </footer>
+  <script src="assets/js/details.js"></script>
+  <script src="assets/js/common.js"></script>
 
 </body>
+
 </html>

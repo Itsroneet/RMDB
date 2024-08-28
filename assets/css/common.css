@@ -1,3 +1,4 @@
+
 body {
   font-family: "Arial", sans-serif;
   margin: 0;
@@ -13,16 +14,6 @@ body {
 /* ---------------------------------
 -------------error---------------
 --------------------------------- */
-
-.error-con {
-  color: white;
-  padding: 10px 0;
-  background: linear-gradient(45deg, red, blue, red);
-  margin-top: 30px;
-  display: none;
-}
-
-.error,
 .movie-id {
   margin: 30px auto;
   display: none;
@@ -33,16 +24,10 @@ body {
   border-radius: 14px;
 }
 
-.error h2,
 .movie-id h2 {
   font-size: 2.5rem;
   background: none;
   text-transform: capitalize;
-}
-.error p {
-  font-size: 1.5rem;
-  margin: 0;
-  margin-bottom: 20px;
 }
 
 /* ----------------------------
@@ -156,6 +141,7 @@ body {
 
 .nav-btn {
   display: flex;
+  position: relative;
 }
 
 #mobile-menu-open,
@@ -193,10 +179,11 @@ body {
 
 #search-box label {
   font-size: 0.8rem;
-  color: yellow;
+  color: white;
   display: none;
   position: absolute;
-  top: 72%;
+  bottom: 7%;
+  right:47%;
 }
 
 footer {
@@ -332,7 +319,7 @@ footer ul a i {
   }
 
   #search-box label {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 
   .nav-btn button {

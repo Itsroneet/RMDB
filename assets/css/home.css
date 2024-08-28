@@ -15,7 +15,7 @@
   background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 1s ease-in-out;
-  background-image: url(../The\ Garfield\ Movie.jpg);
+  background-image: url(../img/hero\ backgroung.jpg);
 }
 
 .hero-image.active {
@@ -62,7 +62,7 @@ main {
 }
 
 
-h2 {
+.catagory-title{
   color: white;
   font-size: 3rem;
   background: linear-gradient(45deg, red, blue, red);
@@ -85,8 +85,46 @@ h2 {
 }
 
 .content-grid p {
-  color: black;
+  color: white;
   margin: 5px 8px;
+}
+
+#error{
+  color: black;
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 2.2rem;
+}
+
+#error span{
+  position: absolute;
+  transition: all .3s;
+}
+
+#error span::before{
+  content: "";
+  animation: dotanimation 1.7s forwards infinite;
+}
+
+@keyframes dotanimation {
+  15%{
+    content: ".";
+  }
+  30%{
+    content: "..";
+  }
+  45%{
+    content: "...";
+  }
+  60%{
+    content: "....";
+  }
+  80%{
+    content: ".....";
+  }
+  100%{
+    content: "......";
+  }
 }
 
 .content-grid .content-item {
@@ -111,6 +149,13 @@ h2 {
 
 .content-grid .content-info {
   padding: 10px;
+}
+
+.content-info{
+  position: absolute;
+    bottom: 0%;
+    background: #00000061;
+    width: 100%;
 }
 
 .hover-info{
@@ -246,6 +291,10 @@ h2 {
 
   h2 {
     font-size: 2rem;
+  }
+
+  #error{
+      font-size: 1.6rem;
   }
 }
 

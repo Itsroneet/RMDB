@@ -1,57 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RMDB Login</title>
-    <link rel="stylesheet" href="css/login.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-</head>
-<body>
 
-    <div class="container ">
-        <!-- <div class="cover">
-            <h2>Welcome to</h2>
-            <h1>RMDB</h1>
-            <p>Discover your favorite movies and TV shows</p>
-        </div> -->
-        <div class="login-box login-active">
-        <a href="/"><h1>RMDB </h1></a>
-            <p>Discover your favorite movies and TV shows</p>
-            <form id="login-form">
-                <i class="fa-regular fa-envelope icon"></i>
-                <input type="email" placeholder="Email" required>
-                <i class="fa-solid fa-lock icon"></i>
-                <input type="password" id="password" class="password-login" placeholder="Password" required>
-                <i class="fa-solid fa-eye eye pass-show-login"></i>
-                <i class="fa-solid fa-eye-slash eye pass-hide-login"></i>
-                <button class="loginbtn btn1"  type="submit">Log In</button>
-            </form>
-            <a href="#" class="forgot-password">Forgot password?</a>
-            <div class="divider"></div>
-            <button class="create-account btn2">Create New Account</button>
-        </div>
-        <div class="signup-box">
-            <a href="/"><h1>RMDB </h1></a>
-            <p>Discover your favorite movies and TV shows</p>
-            <p id="alert" >invite only..</p>
-            <form id="signup-form">
-                <i class="fa-solid fa-user icon"></i>
-                <input type="text" placeholder="Name" id="name" required>
-                <i class="fa-regular fa-envelope icon"></i>
-                <input type="email" placeholder="Email" required>
-                <i class="fa-solid fa-lock icon"></i>
-                <input type="password"class="password-signup" id="password" placeholder="Password" required>
-                <i class="fa-solid fa-eye eye pass-show-signup"></i>
-                <i class="fa-solid fa-eye-slash eye pass-hide-signup"></i>
-                <button type="submit " class="signupbtn btn1" >create account</button>
-            </form>
-            <div class="divider"></div>
-            <button class="have-account btn2">Have an account</button>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="assets/css/login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+  <main>
+    <div class="details">
+      <h2>Welcome to</h2>
+      <h1>RMDB</h1>
+      <p>Discover your favorite movies and TV shows</p>
     </div>
+
+    <div class="form-container">
+      <div id="loading-spinner2" class="loading-spinner"></div>
+
+      <div class="title-area">
+        <a href="/">
+          <h1>RMDB</h1>
+        </a>
+        <p>Discover your favorite movies and TV shows</p>
+      </div>
+      <h2 id="top-title-pc">login</h2>
+
+      <p class="error-msg"></p>
+      <p class="success-msg"></p>
+
+      <div class="login-area">
+        <form id="login-form">
+          <input type="email" id="login-email" autocomplete="email" placeholder="Email" />
+          <div class="password-container">
+            <input type="password" id="login-password" placeholder="password" />
+            <i class="fas fa-eye" id="togglePassword" onclick="togglePasswordVisibility('login-password', 'togglePassword')"></i>
+          </div>
+          <button type="submit" class="btn1">Log in</button>
+        </form>
+
+        <p class="forgot-btn" onclick="showforgot()">forgot password ?</p>
+        <hr class="line" />
+        <button type="button" onclick="showsignup()" class="btn2">
+          Don't have an account ?
+        </button>
+      </div>
+
+      <div class="signup-area">
+        <form id="signup-form">
+          <input type="text" id="fullname" name="name" autocomplete="name" placeholder="Full Name" />
+          <input type="email" id="reg-email" placeholder="Email" autocomplete="email" required />
+          <div class="password-container">
+            <input type="password" id="reg-password" placeholder="password" />
+            <i class="fas fa-eye" id="togglePasswordSignup" onclick="togglePasswordVisibility('reg-password', 'togglePasswordSignup')"></i>
+          </div>
+          <div class="password-container">
+            <input type="password" id="c-password" placeholder="confirm password" />
+            <i class="fas fa-eye" id="toggleCPassword" onclick="togglePasswordVisibility('c-password', 'toggleCPassword')"></i>
+          </div>
+          <button type="submit" class="btn1">Sign up</button>
+        </form>
+        <hr class="line" />
+        <button type="button" onclick="showlogin()" class="btn2">
+          Already have an account ?
+        </button>
+      </div>
+
+      <div class="forgot-area">
+        <form id="forgot-from">
+          <input type="email" id="forgot-email" autocomplete="email" placeholder="Email" />
+          <button type="submit" class="btn1">Reset</button>
+        </form>
+
+        <hr class="line" />
+        <button type="button" onclick="backtologin()" class="btn2">
+          Back to login
+        </button>
+      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="js/login.js"></script>
+  </main>
+
+  <script src="assets/js/login.js"></script>
+
+  <script>
+ 
+  </script>
 </body>
+
 </html>
