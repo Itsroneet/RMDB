@@ -10,42 +10,59 @@ let toptitlepc = document.querySelector("#top-title-pc")
 let error_msg = document.querySelector(".error-msg")
 let success_msg = document.querySelector(".success-msg")
 
+document.addEventListener("DOMContentLoaded", () => {
+    const currentView = localStorage.getItem("currentView") || "login";
+    if (currentView === "signup") {
+        showsignup();
+    } else if (currentView === "forgot") {
+        showforgot();
+    } else {
+        showlogin();
+    }
+});
+
 function showsignup() {
-    document.title = "Signup"
-    login_area.style.display = "none"
-    signup_area.style.display = "block"
+    document.title = "Signup";
+    login_area.style.display = "none";
+    signup_area.style.display = "block";
     loginform.reset();
-    error_msg.innerHTML = ``
-    success_msg.innerHTML = ``
-    toptitlepc.innerHTML = `Signup`
+    error_msg.innerHTML = ``;
+    success_msg.innerHTML = ``;
+    toptitlepc.innerHTML = `Signup`;
+    localStorage.setItem("currentView", "signup");
 }
+
 function showlogin() {
-    document.title = "login"
-    login_area.style.display = "block"
-    signup_area.style.display = "none"
-    error_msg.innerHTML = ``
-    success_msg.innerHTML = ``
+    document.title = "Login";
+    login_area.style.display = "block";
+    signup_area.style.display = "none";
+    error_msg.innerHTML = ``;
+    success_msg.innerHTML = ``;
     signupform.reset();
-    toptitlepc.innerHTML = `login`
+    toptitlepc.innerHTML = `Login`;
+    localStorage.setItem("currentView", "login");
 }
 
 function showforgot() {
-    document.title = "forgot"
-    login_area.style.display = "none"
-    forgot_area.style.display = "block"
-    error_msg.innerHTML = ``
-    success_msg.innerHTML = ``
+    document.title = "Forgot";
+    login_area.style.display = "none";
+    forgot_area.style.display = "block";
+    error_msg.innerHTML = ``;
+    success_msg.innerHTML = ``;
     loginform.reset();
-    toptitlepc.innerHTML = `forgot`
+    toptitlepc.innerHTML = `Forgot`;
+    localStorage.setItem("currentView", "forgot");
 }
+
 function backtologin() {
-    document.title = "login"
-    login_area.style.display = "block"
-    forgot_area.style.display = "none"
-    error_msg.innerHTML = ``
-    success_msg.innerHTML = ``
+    document.title = "Login";
+    login_area.style.display = "block";
+    forgot_area.style.display = "none";
+    error_msg.innerHTML = ``;
+    success_msg.innerHTML = ``;
     forgotfrom.reset();
-    toptitlepc.innerHTML = `login`
+    toptitlepc.innerHTML = `Login`;
+    localStorage.setItem("currentView", "login");
 }
 
 
