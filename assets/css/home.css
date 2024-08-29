@@ -148,15 +148,19 @@ main {
 }
 
 .content-grid .content-info {
+  opacity: 100%;
   padding: 10px;
 }
 
 .content-info{
-  position: absolute;
+     position: absolute;
     bottom: 0%;
     background: #000000d6;
     width: 100%;
-}
+    display: grid;
+    place-content: center;
+    transition: all .5s ease-in;
+  }
 
 .hover-info{
   position: absolute;
@@ -164,11 +168,11 @@ main {
   height: 100%;
   width: 100%;
   top: 0%;
+left: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  left: 100%;
   transition: all .13s ease-in ;
 }
 
@@ -321,5 +325,11 @@ main {
   font-size: .7rem;
 }
 
+}
+
+@media only screen and (max-width: 400px) {
+.details-button{
+  font-size: .6rem;
+}
 
 }

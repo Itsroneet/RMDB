@@ -35,15 +35,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
                     // Add event listener to the movieItem
                     movieItem.addEventListener('click', () => {
+                        
                         // Reset the previous active hover info if there is one
                         if (activeHoverInfo) {
-                            activeHoverInfo.style.transform = "translateX(0)";
+                            activeHoverInfo.style.transform = "translatex(100%)";
                         }
-    
+                        
                         // Set the new active hover info
                         const hoverInfo = movieItem.querySelector('.hover-info');
-                        hoverInfo.style.transform = "translateX(-100%)";
-                        activeHoverInfo = hoverInfo;
+                        hoverInfo.style.transform = "translatex(-100%)";
+                        activeHoverInfo = hoverInfo ;
                     });
     
                     container.appendChild(movieItem);

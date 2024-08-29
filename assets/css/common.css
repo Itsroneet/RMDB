@@ -269,6 +269,7 @@ footer ul a i {
     padding: 0 0 35px 0;
     top: -20px;
     right: 0;
+    z-index: 1;
     transform: translateX(100%);
     border-left: 2px solid red;
     overflow: hidden;
@@ -338,7 +339,7 @@ footer ul a i {
   #mobile-menu-open {
     color: white;
     display: block;
-    margin-left: 0px;
+    margin-left: -60px;
   }
   footer {
     padding: 2px 0;
