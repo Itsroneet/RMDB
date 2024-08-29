@@ -140,7 +140,7 @@ forgotfrom.addEventListener("submit", e => {
         error_msg.innerHTML = ``
         setTimeout(() => {
             hideloading();
-            success_msg.innerHTML = `Verification link to <b> ${forgotemail.value} </b>`
+            error_msg.innerHTML = `Account not found`
             forgotfrom.reset();
         }, 800);
     }
