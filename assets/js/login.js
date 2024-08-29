@@ -28,7 +28,7 @@ function showsignup() {
     loginform.reset();
     error_msg.innerHTML = ``;
     success_msg.innerHTML = ``;
-    toptitlepc.innerHTML = `RMDB - Signup`;
+    toptitlepc.innerHTML = `Signup`;
     localStorage.setItem("currentView", "signup");
 }
 
@@ -39,7 +39,7 @@ function showlogin() {
     error_msg.innerHTML = ``;
     success_msg.innerHTML = ``;
     signupform.reset();
-    toptitlepc.innerHTML = `RMDB - Login`;
+    toptitlepc.innerHTML = `Login`;
     localStorage.setItem("currentView", "login");
 }
 
