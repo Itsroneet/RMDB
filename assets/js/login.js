@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function showsignup() {
-    document.title = "Signup";
+    document.title = "RMDB - Signup";
     login_area.style.display = "none";
     signup_area.style.display = "block";
     loginform.reset();
@@ -33,7 +33,7 @@ function showsignup() {
 }
 
 function showlogin() {
-    document.title = "Login";
+    document.title = "RMDB - Login";
     login_area.style.display = "block";
     signup_area.style.display = "none";
     error_msg.innerHTML = ``;
@@ -44,24 +44,24 @@ function showlogin() {
 }
 
 function showforgot() {
-    document.title = "Forgot";
+    document.title = "RMDB - Forgot password";
     login_area.style.display = "none";
     forgot_area.style.display = "block";
     error_msg.innerHTML = ``;
     success_msg.innerHTML = ``;
     loginform.reset();
-    toptitlepc.innerHTML = `RMDB - Forgot password`;
+    toptitlepc.innerHTML = `Forgot password`;
     localStorage.setItem("currentView", "forgot");
 }
 
 function backtologin() {
-    document.title = "Login";
+    document.title = "RMDB - Login";
     login_area.style.display = "block";
     forgot_area.style.display = "none";
     error_msg.innerHTML = ``;
     success_msg.innerHTML = ``;
     forgotfrom.reset();
-    toptitlepc.innerHTML = `RMDB - Login`;
+    toptitlepc.innerHTML = `Login`;
     localStorage.setItem("currentView", "login");
 }
 
