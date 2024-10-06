@@ -34,8 +34,12 @@
 
       <div class="login-area">
         <form id="login-form">
+          <div class="emailcontainer">
+            <i class="fa-regular fa-envelope left-icon"></i>
           <input type="email" id="login-email" autocomplete="email" placeholder="Email" />
+          </div>
           <div class="password-container">
+            <i class="fa-solid fa-lock left-icon"></i>
             <input type="password" id="login-password" placeholder="password" />
             <i class="fas fa-eye" id="togglePassword" onclick="togglePasswordVisibility('login-password', 'togglePassword')"></i>
           </div>
@@ -51,13 +55,21 @@
 
       <div class="signup-area">
         <form id="signup-form">
-          <input type="text" id="fullname" name="name" autocomplete="name" placeholder="Full Name" />
-          <input type="email" id="reg-email" placeholder="Email" autocomplete="email" required />
+          <div class="namecontainer">
+            <i class="fa-regular fa-user left-icon"></i>
+            <input type="text" id="fullname" name="name" autocomplete="name" placeholder="Full Name" />
+          </div>
+          <div class="emailcontainer">
+            <i class="fa-regular fa-envelope left-icon"></i>
+            <input type="email" id="reg-email" placeholder="Email" autocomplete="email" required />
+          </div>
           <div class="password-container">
+            <i class="fa-solid fa-lock left-icon"></i>
             <input type="password" id="reg-password" placeholder="password" />
             <i class="fas fa-eye" id="togglePasswordSignup" onclick="togglePasswordVisibility('reg-password', 'togglePasswordSignup')"></i>
           </div>
           <div class="password-container">
+            <i class="fa-solid fa-lock left-icon"></i>
             <input type="password" id="c-password" placeholder="confirm password" />
             <i class="fas fa-eye" id="toggleCPassword" onclick="togglePasswordVisibility('c-password', 'toggleCPassword')"></i>
           </div>
@@ -71,7 +83,10 @@
 
       <div class="forgot-area">
         <form id="forgot-from">
+          <div class="emailcontainer">
+          <i class="fa-regular fa-envelope left-icon"></i>
           <input type="email" id="forgot-email" autocomplete="email" placeholder="Email" />
+          </div>
           <button type="submit" class="btn1">Reset</button>
         </form>
 
