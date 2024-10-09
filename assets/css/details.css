@@ -116,7 +116,7 @@ main {
 .small-carousel {
     display: flex;
     overflow: hidden;
-    gap: 1rem;
+    gap: 1.3rem;
 }
 
 .small-carousel-image {
@@ -151,40 +151,6 @@ main {
 .carousel-control.right {
     right: 0;
 }
-
-
-
-
-/* Small carousel wrapper and controls */
-.small-carousel-wrapper {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.small-carousel {
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-}
-
-.small-carousel-image {
-    width: 250px;
-    cursor: pointer;
-    opacity: 0.9;
-    transition: all 0.2s ease;
-}
-
-.small-carousel-image:hover {
-    opacity: 1;
-}
-
-
-
 
 
 /* Big modal carousel styles */
