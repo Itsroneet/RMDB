@@ -170,7 +170,6 @@ main {
     gap: 10px;
     overflow-x: auto;
     scroll-behavior: smooth;
-    max-width: 90%;
 }
 
 .small-carousel-image {
