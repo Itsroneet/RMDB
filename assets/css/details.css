@@ -176,7 +176,7 @@ main {
     width: 250px;
     cursor: pointer;
     opacity: 0.9;
-    transition: opacity 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .small-carousel-image:hover {
