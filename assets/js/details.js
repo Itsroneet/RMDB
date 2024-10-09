@@ -68,33 +68,133 @@ document.addEventListener('DOMContentLoaded', function() {
         displayRelatedImages(movie.images.backdrops);
     }
 
+
+
     function displayRelatedImages(images) {
-        let relatedImagesHTML = '<h3>Related Images</h3><div class="carousel">';
-        images.slice(0, 10).forEach(image => {
-            relatedImagesHTML += `<img src="https://image.tmdb.org/t/p/w300${image.file_path}" alt="Related Image">`;
-        });
-        relatedImagesHTML += '</div>';
+        let currentIndex = 0;
+        const totalImages = Math.min(images.length, 10);
+    
+        // Render small carousel
+        let relatedImagesHTML = '<h3>Related Images</h3><div class="small-carousel-wrapper">';
         relatedImagesHTML += `
-            <button class="carousel-control left">&lsaquo;</button>
-            <button class="carousel-control right">&rsaquo;</button>
+            <button class="carousel-control left small-carousel-control">&lsaquo;</button>
+            <div class="small-carousel">
         `;
+        
+        images.slice(0, totalImages).forEach((image, index) => {
+            relatedImagesHTML += `<img class="small-carousel-image" src="https://image.tmdb.org/t/p/w300${image.file_path}" alt="Related Image" data-index="${index}">`;
+        });
+    
+        relatedImagesHTML += `
+            </div>
+            <button class="carousel-control right small-carousel-control">&rsaquo;</button>
+        </div>`;
+        
         relatedImagesContainer.innerHTML = relatedImagesHTML;
-
-        const carousel = document.querySelector('.carousel');
-        const leftControl = document.querySelector('.carousel-control.left');
-        const rightControl = document.querySelector('.carousel-control.right');
-        let scrollAmount = 0;
-
-        rightControl.addEventListener('click', () => {
-            scrollAmount += 150;
-            carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+    
+        // Render modal for big carousel
+        const modalHTML = `
+            <div id="imageModal" class="modal">
+                <span class="close">&times;</span>
+                <div class="modal-content-container">
+                    <div class="image-wrapper">
+                        <img id="modalImage" class="modal-content">
+                    </div>
+                    <div class="counter"><span id="currentImageIndex">1</span> / ${totalImages}</div>
+                </div>
+                <button id="leftControl" class="carousel-control left">&lsaquo;</button>
+                <button id="rightControl" class="carousel-control right">&rsaquo;</button>
+            </div>`;
+        
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+    
+        const modal = document.getElementById("imageModal");
+        const modalImage = document.getElementById("modalImage");
+        const closeModal = document.querySelector(".close");
+        const leftControl = document.getElementById("leftControl");
+        const rightControl = document.getElementById("rightControl");
+        const currentImageIndexElem = document.getElementById('currentImageIndex');
+        const smallCarousel = document.querySelector('.small-carousel');
+        const smallLeftControl = document.querySelector('.small-carousel-control.left');
+        const smallRightControl = document.querySelector('.small-carousel-control.right');
+        const smallCarouselImages = document.querySelectorAll('.small-carousel-image');
+    
+        let scrollPosition = 0;
+    
+        // Small carousel scroll buttons
+        smallRightControl.addEventListener('click', () => {
+            scrollPosition += 150;
+            smallCarousel.scrollTo({ left: scrollPosition, behavior: 'smooth' });
         });
-
+        
+        smallLeftControl.addEventListener('click', () => {
+            scrollPosition -= 150;
+            smallCarousel.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+        });
+    
+        // Show big carousel (modal) when clicking on small carousel image
+        smallCarouselImages.forEach((imageElement) => {
+            imageElement.addEventListener('click', (event) => {
+                const index = event.target.getAttribute('data-index');
+                showBigCarousel(parseInt(index, 10));
+            });
+        });
+    
+        // Function to show big carousel
+        function showBigCarousel(index) {
+            currentIndex = index;
+            modal.style.display = "grid";
+            updateBigCarouselImage();
+            document.querySelector(".nav").style.display = "none"; // Hide nav bar
+            disableScroll();
+        }
+    
+        // Function to update the big carousel image
+        function updateBigCarouselImage() {
+            modalImage.src = `https://image.tmdb.org/t/p/original${images[currentIndex].file_path}`;
+            currentImageIndexElem.textContent = currentIndex + 1;
+        }
+    
+        // Close the modal
+        closeModal.addEventListener('click', () => {
+            modal.style.display = "none";
+            document.querySelector(".nav").style.display = "flex"; // Show nav bar
+            enableScroll();
+        });
+    
+        // Left control (Previous image)
         leftControl.addEventListener('click', () => {
-            scrollAmount -= 150;
-            carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+            if (currentIndex === 0) {
+                currentIndex = totalImages - 1;
+            } else {
+                currentIndex -= 1;
+            }
+            updateBigCarouselImage();
         });
+    
+        // Right control (Next image)
+        rightControl.addEventListener('click', () => {
+            if (currentIndex === totalImages - 1) {
+                currentIndex = 0;
+            } else {
+                currentIndex += 1;
+            }
+            updateBigCarouselImage();
+        });
+    
+        // Disable page scroll when modal is open
+        function disableScroll() {
+            document.body.style.overflow = 'hidden';
+        }
+    
+        // Enable page scroll when modal is closed
+        function enableScroll() {
+            document.body.style.overflow = '';
+        }
     }
+        
+     
+      
    
     closeTrailerBtn.addEventListener('click', () => {
         trailerVideo.src = '';

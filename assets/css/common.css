@@ -43,6 +43,7 @@ body {
   cursor: pointer;
   transition: 0.3s;
   border: 1px solid white;
+  text-decoration: none;
 }
 
 .btn-1:hover {
@@ -65,6 +66,11 @@ body {
   border-radius: 8px;
   scale: 1.1;
 }
+
+
+/* ---------------------------------
+-------------NAvbar---------------
+--------------------------------- */
 
 .nav {
   display: flex;
@@ -186,6 +192,10 @@ body {
   right:47%;
 }
 
+/* ---------------------------------
+-------------footer---------------
+--------------------------------- */
+
 footer {
   display: flex;
   background-color: red;
@@ -218,16 +228,7 @@ footer ul a i {
   font-size: 1.3rem;
 }
 
-@media (max-width: 600px) {
-  header nav ul li {
-    display: block;
-    margin: 10px 0;
-  }
 
-  #search-bar input {
-    width: 80%;
-  }
-}
 
 /* ----------------responsive--------------- */
 
@@ -317,6 +318,15 @@ footer ul a i {
 
   .nav button {
     font-size: 0.7rem;
+  }
+
+  header nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  #search-bar input {
+    width: 80%;
   }
 
   #search-box label {

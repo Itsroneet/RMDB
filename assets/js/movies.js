@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 renderPagination(page);
             })
             .catch(() => {
-                alert('Failed to fetch data. Please try again later.');
+                window.location.href = `maintenance.html`;
             });
     }
 

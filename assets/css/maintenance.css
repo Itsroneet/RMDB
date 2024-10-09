@@ -1,0 +1,99 @@
+body {
+   
+    font-family: Arial, sans-serif;
+    background: url(../img/hero\ backgroung.jpg) ;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: #000000b4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 85vw;
+}
+
+h1 {
+    color: white;
+    font-size: 36px;
+}
+
+p {
+    color: white;
+    font-size: 18px;
+}
+
+#back{
+    margin: 10px 0;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 0px;
+}
+
+
+@media (max-width : 600px) {
+
+    h1 {
+        font-size: 30px;
+    }
+    
+    p {
+        font-size: 15px;
+    }
+
+    .btn-1 {
+        font-size: 13px;
+             }
+      
+ 
+}
+
+@media (max-width : 480px) {
+
+    h1 {
+        font-size: 25px;
+    }
+    
+    p {
+        font-size: 13px;
+    }
+
+    .btn-1 {
+        font-size: 11px;
+             }
+      
+ 
+}
+@media (max-width : 410px) {
+
+    h1 {
+        font-size: 22px;
+    }
+    
+    p {
+        font-size: 12px;
+    }
+
+    .btn-1 {
+        font-size: 10px;
+             }
+      
+ 
+}
+
+
