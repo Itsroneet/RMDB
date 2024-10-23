@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const movieId = urlParams.get('movieId');
 
+
     function showLoadingSpinner() {
         loader.style.display = "block"
     }
@@ -55,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 ${trailer ? `<button id="view-trailer" class="btn btn-1">View Trailer</button>` : ''}
             </div>
         `;
+        document.title = movie.title + " - RMDB"
         movieDetailsContainer.innerHTML = movieDetailsHTML;
         movieDetailsContainer.classList.add('active');
 

@@ -107,12 +107,14 @@ main {
 
 .carousel {
     display: flex;
+    justify-content: center;
     overflow: hidden;
     gap: 1rem;
 }
 
 .carousel img {
     width: 100%;
+    max-width: 300px;
     border-radius: 8px;
     transition: transform 0.3s;
 }

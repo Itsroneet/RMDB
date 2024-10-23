@@ -13,9 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 displayMovies(data.results);
                 renderPagination(page);
             })
-            .catch(() => {
-                window.location.href = `maintenance.html`;
-            });
+          
     }
 
     function displayMovies(movies) {

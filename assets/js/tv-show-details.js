@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
         `;
+        document.title = show.name + " - RMDB"
         tvShowDetailsContainer.innerHTML = tvShowDetailsHTML;
         tvShowDetailsContainer.classList.add('active');
 
